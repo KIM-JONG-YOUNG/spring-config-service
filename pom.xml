@@ -8,7 +8,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.jong</groupId>
-	<artifactId>spring-config-server</artifactId>
+	<artifactId>spring-config-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-config-service</name>
 	<description>Spring Boot Config Service</description>

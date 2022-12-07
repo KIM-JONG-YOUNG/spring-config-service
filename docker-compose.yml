@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  config-service:
+    image: openjdk:8
+    hostname: config-service
+    container_name: config-service
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - 8888:8888
+    volumes:
+      - ./configs:/app/configs
+      - ./src/main/resources/application.yml:/app/application.yml
+      - ./target/spring-config-service-0.0.1-SNAPSHOT.jar:/app/application.jar
+    command: java -jar -Dspring.config.location=/app/application.yml /app/application.jar
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
