@@ -6,8 +6,8 @@ spring:
     name: spring-config-server
   profiles: 
     active: 
-#    - git
-    - native
+    - git
+#    - native
 
 # Actuator
 management:
@@ -42,10 +42,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/KIM-JONG-YOUNG/spring-cloud
-          search-paths: spring-config-server/config            # Folder 경로 
+          uri: https://github.com/KIM-JONG-YOUNG/spring-config-service
+          search-paths: configs                                               # Folder 경로 
           default-label: master                                                # Branch 정보
-          delete-untracked-branches: true                          # Remote Repository만 사용
+          delete-untracked-branches: true                           # Remote Repository만 사용
           
 --- 
 # Local Config
