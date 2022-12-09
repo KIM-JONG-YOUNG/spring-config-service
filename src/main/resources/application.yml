@@ -13,6 +13,11 @@ spring:
         native:
           # Folder 경로 
           search-locations: file:./configs
+        git:
+          uri: https://github.com/KIM-JONG-YOUNG/spring-config-service
+          search-paths: configs                                               # Folder 경로 
+          default-label: master                                                # Branch 정보
+          delete-untracked-branches: true                           # Remote Repository만 사용
 
 # Actuator
 management:

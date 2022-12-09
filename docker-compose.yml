@@ -13,7 +13,7 @@ services:
       - ./configs:/app/configs
       - ./src/main/resources/application.yml:/app/application.yml
       - ./target/spring-config-service-0.0.1-SNAPSHOT.jar:/app/application.jar
-    command: java -jar -Dspring.config.location=/app/application.yml -Dspring.config.activate.on-profile=deploy /app/application.jar
+    command: java -jar -Dspring.config.location=/app/application.yml -Dspring.profiles.active=git /app/application.jar
     networks:
       - backend
 
