@@ -6,8 +6,8 @@ spring:
     name: spring-config-server
   profiles: 
     active: 
-    - git
-#    - native
+#    - git
+    - native
 
 # Actuator
 management:
@@ -58,4 +58,4 @@ spring:
       server:
         native:
           # Folder 경로 
-          search-locations: file:./configs
+          search-locations: file:/app/configs
