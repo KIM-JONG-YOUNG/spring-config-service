@@ -14,7 +14,7 @@ spring:
         git:
           uri: https://github.com/KIM-JONG-YOUNG/spring-config-service
           search-paths: configs               # Folder 경로 
-          default-label: master               # Branch 정보
+          default-label: docker               # Branch 정보
           delete-untracked-branches: true     # Remote Repository만 사용
         native:
           search-locations: file:/app/configs    # Folder 경로 
