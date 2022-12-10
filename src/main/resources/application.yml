@@ -6,13 +6,17 @@ spring:
     name: config-server
   profiles: 
     active: 
-    - native
+    - git
   cloud:
     config:
       server:
+        git:
+          uri: https://github.com/KIM-JONG-YOUNG/spring-config-service
+          search-paths: configs               # Folder 경로 
+          default-label: master               # Branch 정보
+          delete-untracked-branches: true     # Remote Repository만 사용
         native:
-          # Folder 경로 
-          search-locations: file:./configs
+          search-locations: file:/app/configs    # Folder 경로 
 
 # Actuator
 management:
