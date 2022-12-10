@@ -12,11 +12,26 @@ services:
     volumes:
       - ./src/main/resources:/app/resources
       - ./target:/app/target
-    command: java -jar -Dspring.config.location=/app/resources/application.yml /app/target/spring-config-service-0.0.1-SNAPSHOT.jar
+    command: java -jar -Dspring.config.location=/app/resources/application.yml -Dspring.cloud.config.server.git.default-label=master /app/target/spring-config-service-0.0.1-SNAPSHOT.jar
     networks:
-      - eureka_net
+      - config_net
+
+  docker-config-service:
+    image: openjdk:8
+    hostname: docker-config-service
+    container_name: docker-config-service
+    environment:
+      - TZ=Asia/Seoul
+    ports:
+      - 18888:8888
+    volumes:
+      - ./src/main/resources:/app/resources
+      - ./target:/app/target
+    command: java -jar -Dspring.config.location=/app/resources/application.yml -Dspring.cloud.config.server.git.default-label=docker /app/target/spring-config-service-0.0.1-SNAPSHOT.jar
+    networks:
+      - config_net
 
 networks:
-  eureka_net:
-    name: eureka_net
+  config_net:
+    name: config_net
     external: true
