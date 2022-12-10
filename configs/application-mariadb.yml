@@ -4,7 +4,6 @@ spring:
   datasource:
     hikari:
       driver-class-name: org.mariadb.jdbc.Driver
-#      jdbc-url: jdbc:mariadb://127.0.0.1:3306/board
       jdbc-url: jdbc:mariadb://mariadb:3306/board
       username: root
       password: root
