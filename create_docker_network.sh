@@ -1,2 +1,2 @@
 #!/bin/bash
-docker network create eureka_net
+docker network create config_net
